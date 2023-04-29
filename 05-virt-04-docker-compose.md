@@ -6,7 +6,7 @@
 
 Для получения зачета вам необходимо предоставить скриншот страницы с созданным образом из личного кабинета YandexCloud.
  
-![Ссылка 1](https://github.com/Firewal7/4.-Docker-Compose/blob/main/1.1.jpg)
+![Ссылка 1](https://github.com/Firewal7/devops-netology/blob/main/image/05-virt-04-docker-compose-1.jpg)
 
 ## Задача 2
 
@@ -17,7 +17,7 @@
 
 Для получения зачета, вам необходимо предоставить вывод команды terraform apply и страницы свойств созданной ВМ из личного кабинета YandexCloud.
   
-![Ссылка 2](https://github.com/Firewal7/4.-Docker-Compose/blob/main/2.2.jpg)
+![Ссылка 2](https://github.com/Firewal7/devops-netology/blob/main/image/05-virt-04-docker-compose-2.jpg)
 
 ## Задача 3
 
@@ -25,7 +25,7 @@
 
 Для получения зачета вам необходимо предоставить вывод команды "docker ps" , все контейнеры, описанные в (docker-compose), должны быть в статусе "Up".
   
-![Ссылка 3](https://github.com/Firewal7/4.-Docker-Compose/blob/main/3.3.jpg)
+![Ссылка 3](https://github.com/Firewal7/devops-netology/blob/main/image/05-virt-04-docker-compose-3.jpg)
 
 ## Задача 4 
 
@@ -35,4 +35,4 @@
 Подождите 5-10 минут, чтобы система мониторинга успела накопить данные.
 
 
-![Ссылка 4](https://github.com/Firewal7/4.-Docker-Compose/blob/main/4.4.jpg)
+![Ссылка 4](https://github.com/Firewal7/devops-netology/blob/main/image/05-virt-04-docker-compose-4.jpg)
