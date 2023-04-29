@@ -54,5 +54,7 @@ ansible [core 2.14.1]
 ## Задача 4
 1.)  Воспроизвести практическую часть лекции самостоятельно.
 - Создать виртуальную машину.
+[Скриншот](https://github.com/Firewal7/devops-netology/blob/main/image/05-virt-02-iaac-1.jpg)
 - Зайти внутрь ВМ, убедиться, что Docker установлен с помощью команды
 docker ps
+[Скриншот](https://github.com/Firewal7/devops-netology/blob/main/image/05-virt-02-iaac-2.jpg)
