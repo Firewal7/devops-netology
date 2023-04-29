@@ -120,11 +120,11 @@ GRANT
 ```
 - итоговый список БД после выполнения пунктов выше.
 
-![Ссылка 1](https://github.com/Firewal7/sql-2/blob/main/2.1.jpg)
+![Ссылка 1](https://github.com/Firewal7/devops-netology/blob/main/image/06-db-02-sql-1.jpg)
 
 - описание таблиц (describe)
 
-![Ссылка 2](https://github.com/Firewal7/sql-2/blob/main/2.2.jpg)
+![Ссылка 2](https://github.com/Firewal7/devops-netology/blob/main/image/06-db-02-sql-2.jpg)
 
 - SQL-запрос для выдачи списка пользователей с правами над таблицами test_db
 
@@ -132,7 +132,7 @@ GRANT
 test_db=# SELECT grantee, table_catalog, table_name, privilege_type FROM information_schema.table_privileges WHERE table_name IN ('orders','clients');
 ```
 
-![Ссылка 3](https://github.com/Firewal7/sql-2/blob/main/2.3.jpg)
+![Ссылка 3](https://github.com/Firewal7/devops-netology/blob/main/image/06-db-02-sql-3.jpg)
 
 
 ## Задача 3
@@ -175,7 +175,7 @@ SELECT COUNT (*) FROM orders;
 SELECT COUNT (*) FROM clients;
 ```
 
-![Ссылка 4](https://github.com/Firewal7/sql-2/blob/main/3.jpg)
+![Ссылка 4](https://github.com/Firewal7/devops-netology/blob/main/image/06-db-02-sql-4.jpg)
 
 ## Задача 4 
 
@@ -202,14 +202,14 @@ UPDATE 1
 Приведите SQL-запрос для выдачи всех пользователей, которые совершили заказ, а также вывод данного запроса. Подсказка - используйте директиву UPDATE.
 
 
-![Ссылка 5](https://github.com/Firewal7/sql-2/blob/main/4.jpg)
+![Ссылка 5](https://github.com/Firewal7/devops-netology/blob/main/image/06-db-02-sql-5.jpg)
 
 
 ## Задача 5
 
 ### Получите полную информацию по выполнению запроса выдачи всех пользователей из задачи 4 (используя директиву EXPLAIN).
 
-![Ссылка 6](https://github.com/Firewal7/sql-2/blob/main/5.jpg)
+![Ссылка 6](https://github.com/Firewal7/devops-netology/blob/main/image/06-db-02-sql-6.jpg)
 
 ### Приведите получившийся результат и объясните что значат полученные значения.
 
@@ -227,7 +227,7 @@ root@28d7ec20b83e:/# pg_dump -U kali test_db > /home/backup/test_db.backup
 Остановите контейнер с PostgreSQL (но не удаляйте volumes).
 
 
-![Ссылка 7](https://github.com/Firewal7/sql-2/blob/main/6.1.jpg)
+![Ссылка 7](https://github.com/Firewal7/devops-netology/blob/main/image/06-db-02-sql-7.jpg)
 
 
 Поднимите новый пустой контейнер с PostgreSQL.
