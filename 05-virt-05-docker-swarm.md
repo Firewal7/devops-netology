@@ -30,7 +30,7 @@
 docker node ls
 ```
 
-![Ссылка 2](https://github.com/Firewal7/docker-swarm/blob/main/2.1.jpg)
+![Ссылка 2](https://github.com/Firewal7/devops-netology/blob/main/image/05-virt-05-docker-swarm-1.jpg)
 
 ## Задача 3
 
@@ -41,7 +41,7 @@ docker node ls
 ```
 docker service ls
 ```
-![Ссылка 3](https://github.com/Firewal7/docker-swarm/blob/main/3.1.jpg)
+![Ссылка 3](https://github.com/Firewal7/devops-netology/blob/main/image/05-virt-05-docker-swarm-2.jpg)
 
 ## Задача 4 
 
@@ -52,6 +52,6 @@ docker service ls
 ```
 docker swarm update --autolock=true
 ```
-![Ссылка 4](https://github.com/Firewal7/docker-swarm/blob/main/4.1.jpg)
+![Ссылка 4](https://github.com/Firewal7/devops-netology/blob/main/image/05-virt-05-docker-swarm-3.jpg)
 
 - Команда docker swarm update --autolock=true позволяет зашифровать ключ шифрующий логи Raft и TLS ключ используемый для шифрования коммуникаций между нодами другим ключом, для дополнительной безопасности. Соответственно при перезагрузке ноды нужно будет ввести ключ расшифровки вышеуказанных ключей для успешной работы ноды.
