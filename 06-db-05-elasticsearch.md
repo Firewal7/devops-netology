@@ -37,9 +37,9 @@
 ### Ответ
 
 Создал 
-- [Dockerfile](https://github.com/Firewal7/6.5.-Elasticsearch/blob/main/Dockerfile)
-- [elasticsearch.yml](https://github.com/Firewal7/6.5.-Elasticsearch/blob/main/elasticsearch.yml)
-- [logging.yml](https://github.com/Firewal7/6.5.-Elasticsearch/blob/main/logging.yml)
+- [Dockerfile](https://github.com/Firewal7/devops-netology/blob/main/elasticsearch_file%2006-db-05/Dockerfile)
+- [elasticsearch.yml](https://github.com/Firewal7/devops-netology/blob/main/elasticsearch_file%2006-db-05/elasticsearch.yml)
+- [logging.yml](https://github.com/Firewal7/devops-netology/blob/main/elasticsearch_file%2006-db-05/logging.yml)
 
 Собрал Docker образ
 ```
