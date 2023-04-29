@@ -12,11 +12,11 @@
 
 - скриншот ЛК Yandex Cloud с созданной ВМ,
 
-[Скриншот ЛК Yandex Cloud](https://github.com/Firewal7/8.-Terraform-Yandex-Cloud/blob/main/1.jpg)
+[Скриншот ЛК Yandex Cloud](https://github.com/Firewal7/devops-netology/blob/main/image/07-terraform-02-1.jpg)
 
 - скриншот успешного подключения к консоли ВМ через ssh,
 
-[Скриншот подключение по ssh](https://github.com/Firewal7/8.-Terraform-Yandex-Cloud/blob/main/2.jpg)
+[Скриншот подключение по ssh](https://github.com/Firewal7/devops-netology/blob/main/image/07-terraform-02-2.jpg)
 
 - ответы на вопросы.
 
@@ -36,7 +36,7 @@
 3. Объявите нужные переменные в файле variables.tf, обязательно указывайте тип переменной. Заполните их default прежними значениями из main.tf.
 4. Проверьте terraform plan (изменений быть не должно).
 
-[Скриншот переменных](https://github.com/Firewal7/8.-Terraform-Yandex-Cloud/blob/main/3.jpg)
+[Скриншот переменных](https://github.com/Firewal7/devops-netology/blob/main/image/07-terraform-02-3.jpg)
 
 ### Задача 3
 
@@ -44,7 +44,7 @@
 2. Скопируйте блок ресурса и создайте с его помощью вторую ВМ: "netology-develop-platform-db" , cores = 2, memory = 2, core_fraction = 20. Объявите ее переменные с префиксом vm_db_ в том же файле.
 3. Примените изменения.
 
-[Скриншот ВМ](https://github.com/Firewal7/8.-Terraform-Yandex-Cloud/blob/main/4.1.jpg)
+[Скриншот ВМ](https://github.com/Firewal7/devops-netology/blob/main/image/07-terraform-02-4.jpg)
 
 ### Задача 4
 
@@ -66,7 +66,7 @@ vm_external_ip_address_web = "10.0.1.21"
 2. Замените переменные с именами ВМ из файла variables.tf на созданные вами local переменные.
 3. Примените изменения.
 
-[Скриншот](https://github.com/Firewal7/8.-Terraform-Yandex-Cloud/blob/main/5.1.jpg)
+[Скриншот](https://github.com/Firewal7/devops-netology/blob/main/image/07-terraform-02-5.jpg)
 
 ### Задание 6
 
@@ -123,7 +123,7 @@ variable "vms_ssh_root_key" {
     ssh-keys           = var.vms_ssh_root_key.ssh-keys
   }
 ```
-[Скриншот](https://github.com/Firewal7/8.-Terraform-Yandex-Cloud/blob/main/6.2.jpg)
+[Скриншот](https://github.com/Firewal7/devops-netology/blob/main/image/07-terraform-02-6.jpg)
 
 3. Найдите и удалите все более не используемые переменные проекта.
 4. Проверьте terraform plan (изменений быть не должно).
