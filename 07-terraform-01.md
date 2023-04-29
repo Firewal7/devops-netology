@@ -59,7 +59,7 @@ random_password.random_string: Creation complete after 0s [id=none]
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ```
 
-![terraform.tfstate](https://github.com/Firewal7/7.-Terraform/blob/main/3.jpg)
+![terraform.tfstate](https://github.com/Firewal7/devops-netology/blob/main/image/07-terraform-01-1.jpg)
 
 - Раскомментируйте блок кода, примерно расположенный на строчках 29-42 файла main.tf. Выполните команду terraform -validate. Объясните в чем заключаются намеренно допущенные ошибки? Исправьте их.
 1. Error: Missing name for resource (Ошибка: Отсутствует имя для ресурса)
