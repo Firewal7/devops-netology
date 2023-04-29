@@ -128,18 +128,3 @@ root@77521fddbdc9:/# ls data/
 centos.txt  file.txt
 ```
   
-## Задача 4 (*)
-Воспроизвести практическую часть лекции самостоятельно.
-
-Соберите Docker образ с Ansible, загрузите на Docker Hub и пришлите ссылку вместе с остальными ответами к задачам.
-
-
-## Вот такую ошибку пишет при сборке вашего Dockerfile., не разобрался как решить.
-```
- Stored in directory: /root/.cache/pip/wheels/6c/14/ed/50f8b69cec0b2aa9dd139bb9e634b4274a12682bac1a68862e
-Successfully built ruamel.yaml.clib
-Installing collected packages: typing-extensions, tomli, subprocess-tee, ruamel.yaml.clib, pyrsistent, pygments, platformdirs, pathspec, packaging, mypy-extensions, mitogen, mdurl, jmespath, filelock, click, bracex, attrs, yamllint, wcmatch, ruamel.yaml, markdown-it-py, jsonschema, black, rich, ansible-lint
-  Attempting uninstall: packaging
-    Found existing installation: packaging 20.9
-ERROR: Cannot uninstall 'packaging'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall.
-```
