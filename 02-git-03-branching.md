@@ -236,7 +236,7 @@ Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
 ```
 В результате получаем такую схему:
 
-![Ссылка 1](https://github.com/Firewal7/devops-netology/blob/main/image/02-git-03-branching-2.jpg)
+![Ссылка 2](https://github.com/Firewal7/devops-netology/blob/main/image/02-git-03-branching-2.jpg)
 
 ### Rebase
 
