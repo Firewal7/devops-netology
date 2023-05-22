@@ -157,7 +157,6 @@ Failed after min profile: 1 failure(s), 0 warning(s) on 1 files.
 ```
 6. Попробуйте запустить playbook на этом окружении с флагом `--check`.
 ```
-```
 Завершился с ошибкой.
 ┌──(root㉿kali)-[/home/kali/lesson/devops-netology/08-ansible-03-yandex]
 └─# ansible-playbook site.yml -i inventory/prod.yml --check
@@ -245,7 +244,6 @@ lighthouse-01              : ok=9    changed=0    unreachable=0    failed=0    s
 vector-01                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-```
 ┌──(root㉿kali)-[/home/kali/lesson/devops-netology/08-ansible-03-yandex]
 └─#  ssh admin@158.160.18.202
 [admin@clickhouse-01 ~]$  cat /etc/nginx/conf.d/lighthouse.conf
