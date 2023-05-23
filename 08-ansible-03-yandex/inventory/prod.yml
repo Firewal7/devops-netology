@@ -2,14 +2,15 @@
 clickhouse:
   hosts:
     clickhouse-01:
-      ansible_host: 158.160.18.202
-      ansible_python_interpreter: /usr/bin/python3
-    
+      ansible_host: 158.160.69.55
+      ansible_user: user
 vector:
   hosts:
     vector-01:
-      ansible_host: 158.160.23.154
+      ansible_host: 158.160.70.126
+      ansible_user: user
 lighthouse:
   hosts:
     lighthouse-01:
-      ansible_host: 158.160.2.205
+      ansible_host: 158.160.69.40
+      ansible_user: user
