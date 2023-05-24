@@ -121,14 +121,14 @@
         src: ./lighthouse.zip
         dest: /var/www/html/
         remote_src: true
-      notify: restart nginx service
+      notify: Restart nginx service
     - name: Make nginx config
       become: true
       ansible.builtin.template:
         src: /home/kali/lesson/devops-netology/08-ansible-03-yandex/templates/default.j2
         dest: /etc/nginx/sites-enabled/default
         mode: "0644"
-      notify: restart nginx service
+      notify: Restart nginx service
     - name: Remove lighthouse distrib
       ansible.builtin.file:
         path: "./lighthouse.zip"
