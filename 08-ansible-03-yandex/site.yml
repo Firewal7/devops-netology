@@ -7,7 +7,7 @@
       ansible.builtin.service:
         name: clickhouse-server
         state: restarted
-  tasks:
+  tasks:  
     - name: Mess with clickhouse distrib
       block:
         - name: Get clickhouse distrib
@@ -21,7 +21,7 @@
           ansible.builtin.get_url:
             url: "https://packages.clickhouse.com/rpm/stable/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm"
             dest: "./clickhouse-common-static-{{ clickhouse_version }}.rpm"
-            mode: "0644"
+            mode: "0644"         
     - name: Install clickhouse packages
       become: true
       ansible.builtin.yum:
@@ -29,12 +29,12 @@
           - clickhouse-common-static-{{ clickhouse_version }}.rpm
           - clickhouse-client-{{ clickhouse_version }}.rpm
           - clickhouse-server-{{ clickhouse_version }}.rpm
-      notify: Start clickhouse service
+      notify: Start clickhouse service      
     - name: Start clickhouse service
       become: true
       ansible.builtin.service:
         name: clickhouse-server
-        state: started
+        state: started        
     - name: Create database
       ansible.builtin.command: "clickhouse-client -q 'create database logs;'"
       become: true
@@ -49,7 +49,7 @@
       become: true
       ansible.builtin.service:
         name: vector
-        state: restarted
+        state: restarted      
   tasks:
     - name: Get vector distrib
       ansible.builtin.get_url:
@@ -69,7 +69,7 @@
       become: true
       ansible.builtin.service:
         name: nginx
-        state: restarted
+        state: restarted       
   tasks:
     - name: Install nginx
       become: true
@@ -86,35 +86,36 @@
       become: true
       ansible.builtin.service:
         name: nginx
-        state: restarted
+        state: restarted       
   pre_tasks:
     - name: Install unzip
       become: true
       ansible.builtin.apt:
         name: unzip
         state: present
-        update_cache: true
+        update_cache: true         
   tasks:
     - name: Get lighthouse distrib
       ansible.builtin.get_url:
         url: "https://github.com/VKCOM/lighthouse/archive/refs/heads/master.zip"
         dest: "./lighthouse.zip"
-        mode: "0644"
+        mode: "0644"       
     - name: Unarchive lighthouse distrib into nginx
       become: true
       ansible.builtin.unarchive:
         src: ./lighthouse.zip
         dest: /var/www/html/
         remote_src: true
-      notify: restart nginx service
+      notify: restart nginx service  
     - name: Make nginx config
       become: true
       ansible.builtin.template:
         src: /home/kali/lesson/devops-netology/08-ansible-03-yandex/templates/default.j2
         dest: /etc/nginx/sites-enabled/default
         mode: "0644"
-      notify: restart nginx service
+      notify: restart nginx service     
     - name: Remove lighthouse distrib
       ansible.builtin.file:
         path: "./lighthouse.zip"
         state: absent
+
