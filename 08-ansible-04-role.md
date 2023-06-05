@@ -78,10 +78,12 @@ defaults  files  handlers  meta  README.md  tasks  templates  tests  vars
 - name: vector
   src: git@github.com:Firewal7/vector-role.git
   scm: git
+  version: "1.0.1"
 
 - name: lighthouse
   src: git@github.com:Firewal7/lighthouse-role.git
-  scm: git 
+  scm: git
+  version: "1.1.1"
 ```
 9. Переработайте playbook на использование roles. Не забудьте про зависимости LightHouse и возможности совмещения `roles` с `tasks`.
 ```
