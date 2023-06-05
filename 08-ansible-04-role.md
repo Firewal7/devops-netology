@@ -300,10 +300,10 @@ vector-01                  : ok=5    changed=0    unreachable=0    failed=0    s
 
 10. Выложите playbook в репозиторий.
 
-![Playbook](https://github.com/Firewal7/devops-netology/tree/main/08-ansible-04-role/playbook)
+[Playbook](https://github.com/Firewal7/devops-netology/tree/main/08-ansible-04-role/playbook)
 
 11. В ответе дайте ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
 
-![vector](https://github.com/Firewal7/vector-role)
+[vector](https://github.com/Firewal7/vector-role)
 
-![lighthouse](https://github.com/Firewal7/lighthouse-role)
+[lighthouse](https://github.com/Firewal7/lighthouse-role)
