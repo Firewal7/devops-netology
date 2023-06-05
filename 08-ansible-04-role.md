@@ -128,12 +128,12 @@ clickhouse:
 vector:
   hosts:
     vector-01:
-      ansible_host: 158.160.4.251
+      ansible_host: 158.160.1.110
       ansible_user: user
 lighthouse:
   hosts:
     lighthouse-01:
-      ansible_host: 158.160.6.73
+      ansible_host: 130.193.41.14
       ansible_user: user
 ```
 ```
@@ -305,4 +305,5 @@ vector-01                  : ok=5    changed=0    unreachable=0    failed=0    s
 11. В ответе дайте ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
 
 ![vector](https://github.com/Firewal7/vector-role)
+
 ![lighthouse](https://github.com/Firewal7/lighthouse-role)
