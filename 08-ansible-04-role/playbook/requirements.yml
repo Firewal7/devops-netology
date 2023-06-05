@@ -1,13 +1,13 @@
 ---
-  - name: vector_role
-    src: git@github.com:Firewal7/vector-role.git
-    scm: git
-    version: 1.1.2
-  - name: clickhouse_role
-    src: git@github.com:Firewal7/clickhouse-role.git
-    scm: git
-    version: 1.2.1
-  - name: lighthouse_role
-    src: git@github.com:Firewal7/lighthouse-role.git
-    scm: git
-    version: 1.0.1
+- name: clickhouse
+  src: git@github.com:AlexeySetevoi/ansible-clickhouse.git
+  scm: git
+  version: "1.11.0"
+
+- name: vector
+  src: git@github.com:Firewal7/vector-role.git
+  scm: git
+
+- name: lighthouse
+  src: git@github.com:Firewal7/lighthouse-role.git
+  scm: git
