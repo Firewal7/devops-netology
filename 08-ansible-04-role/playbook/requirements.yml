@@ -7,7 +7,9 @@
 - name: vector
   src: git@github.com:Firewal7/vector-role.git
   scm: git
+  version: "1.0.1"
 
 - name: lighthouse
   src: git@github.com:Firewal7/lighthouse-role.git
   scm: git
+  version: "1.1.1"
