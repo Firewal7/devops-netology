@@ -306,6 +306,6 @@ vector-01                  : ok=5    changed=0    unreachable=0    failed=0    s
 
 11. В ответе дайте ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
 
-[vector](https://github.com/Firewal7/vector-role)
+[vector](https://github.com/Firewal7/vector-role/tree/1.0.1)
 
-[lighthouse](https://github.com/Firewal7/lighthouse-role)
+[lighthouse](https://github.com/Firewal7/lighthouse-role/tree/1.1.1)
