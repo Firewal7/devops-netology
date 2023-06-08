@@ -37,7 +37,7 @@ pycontribs/ubuntu   latest    42a4e3b21923   3 years ago    664MB
 - Установил driver docker: pip3 install molecule_docker
 - Установил flake8 pip3 install flake8
 - Запустил molecule test -s centos_7
-``
+```
 └─# molecule test -s centos_7
 INFO     centos_7 scenario test matrix: dependency, lint, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
 INFO     Performing prerun...
@@ -103,7 +103,7 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
 
 INFO     Pruning extra files from scenario ephemeral directory
-``
+```
 2. Перейдите в каталог с ролью vector-role и создайте сценарий тестирования по умолчанию при помощи molecule init scenario --driver-name docker.
 ```
 └─# molecule init scenario --driver-name docker
@@ -203,7 +203,7 @@ INFO     Pruning extra files from scenario ephemeral directory
 
 ### Tox
 
-1. Добавьте в директорию с vector-role файлы из директории.
+1. Добавьте в директорию с vector-role файлы из [директории](https://github.com/Firewal7/devops-netology/tree/main/08-ansible-05-testing/example).
 2. Запустите docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash, где path_to_repo — путь до корня репозитория с vector-role на вашей файловой системе.
 3. Внутри контейнера выполните команду tox, посмотрите на вывод.
 4. Создайте облегчённый сценарий для molecule с драйвером molecule_podman. Проверьте его на исполнимость.
