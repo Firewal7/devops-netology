@@ -22,3 +22,4 @@
 19. [Работа с Playbook](https://github.com/Firewal7/devops-netology/blob/main/08-ansible-02-playbook.md)
 20. [Использование Yandex Cloud](https://github.com/Firewal7/devops-netology/blob/main/08-ansible-03-yandex.md)
 21. [Работа с roles](https://github.com/Firewal7/devops-netology/blob/main/08-ansible-04-role.md)
+22. [Тестирование roles](https://github.com/Firewal7/devops-netology/blob/main/08-ansible-05-testing.md)
