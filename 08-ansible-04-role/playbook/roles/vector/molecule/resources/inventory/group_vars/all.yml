@@ -1,0 +1,17 @@
+---
+vector_config:
+  data_dir: /var/lib/vector
+  sources:
+    local:
+      type: socket
+      address: 127.0.0.1:6767
+      max_length: 102400
+      mode: "tcp"
+  sinks:
+    to_file:
+      type: file
+      inputs: ["local"]
+      healthcheck: true
+      path: "/etc/vector/local.log"
+      encoding:
+        codec: json

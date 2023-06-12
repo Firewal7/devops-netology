@@ -1,0 +1,11 @@
+---
+# handlers file for vector-role
+- name: Install Vector
+  hosts: vector
+  become: true
+  handlers:
+    - name: Start Vector service
+      become: true
+      ansible.builtin.service:
+        name: vector
+        state: restarted

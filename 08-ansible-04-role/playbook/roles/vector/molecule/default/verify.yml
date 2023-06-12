@@ -1,0 +1,59 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Preparation verify vector centos
+  hosts: centos7
+  gather_facts: false
+  tasks:
+    - name: install nc
+      become: true
+      yum:
+        name: nc
+        state: present
+- name: Preparation verify vector centos
+  hosts: centos8
+  gather_facts: false
+  tasks:
+    - name: prepare repo
+      shell: sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* && sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+    - name: install nc
+      become: true
+      yum:
+        name: nc
+        state: present
+- name: Preparation verify vector ubuntu
+  hosts: deb
+  gather_facts: false
+  tasks:
+    - name: install nc
+      become: true
+      apt:
+        name: netcat
+        state: present
+- name: Verify vector
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Show facts available on the system
+      ansible.builtin.debug:
+        var: ansible_facts.distribution
+    - name: validate config vector
+      shell: /usr/bin/vector validate --config-yaml /etc/vector/vector.yml
+      changed_when: false
+    - name: Copy and Execute the script
+      script: ../resources/create_message.sh
+      register: qwe
+      changed_when: false
+#      when:
+#        - ansible_facts["distribution"] == "Ubuntu"
+    - name: check work vector
+      slurp:
+        src: "/etc/vector/local.log"
+      register: mounts
+    - name: set correct fact
+      set_fact:
+        debug_msg: "{{ mounts['content'] | b64decode }}"
+    - name: Test message in file
+      assert:
+        that:
+          - "'debug message' in debug_msg.message"

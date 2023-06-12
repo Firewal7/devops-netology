@@ -1,0 +1,5 @@
+---
+# defaults file for lighthouse-role
+lighthouse_url: "https://github.com/VKCOM/lighthouse.git"
+lighthouse_dir: "/usr/share/nginx/html/lighthouse"
+lighthouse_nginx_user: "root"

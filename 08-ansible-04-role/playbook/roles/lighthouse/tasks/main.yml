@@ -1,0 +1,33 @@
+---
+# tasks file for lighthouse-role
+- name: Install epel-release
+  become: true
+  ansible.builtin.yum:
+    name: epel-release
+    state: present
+- name: Install nginx
+  become: true
+  ansible.builtin.yum:
+    name: nginx
+    state: present
+  notify: Nginx start
+- name: Create nginx config
+  become: true
+  ansible.builtin.template:
+    src: templates/nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+    mode: 0644
+  notify: Nginx reload
+- name: Lighthouse | Clone repository
+  become: true
+  ansible.builtin.git:
+    repo: "{{ lighthouse_url }}"
+    dest: "{{ lighthouse_dir }}"
+    version: master
+- name: Create Lighthouse config
+  become: true
+  ansible.builtin.template:
+    src: templates/lighthouse_nginx.conf.j2
+    dest: /etc/nginx/conf.d/lighthouse.conf
+    mode: 0644
+  notify: Nginx reload

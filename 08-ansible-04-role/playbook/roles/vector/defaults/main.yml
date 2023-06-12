@@ -1,0 +1,25 @@
+---
+vector_version: "0.29.1"
+ip_clickhouse: 127.0.0.1
+port_clickhouse: 8123
+vector_config:
+  data_dir: /var/lib/vector
+  sources:
+    sample_file:
+      type: file
+      read_from: beginning
+      ignore_older_secs: 600
+      include:
+        - /var/log/**/*.log
+    vector_log:
+      type: internal_logs
+  sinks:
+    to_clickhouse:
+      type: clickhouse
+      inputs:
+        - sample_file
+      endpoint: http://{{ ip_clickhouse }}:{{ port_clickhouse }}
+      database: logs
+      table: local_log
+      skip_unknown_fields: true
+      compression: gzip

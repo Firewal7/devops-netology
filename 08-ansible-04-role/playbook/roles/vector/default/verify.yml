@@ -1,0 +1,24 @@
+---
+# This is an example playbook to execute Ansible tests.
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Include vars
+      include_vars:
+        file: ../../defaults/main.yml
+        name: def_vars
+    - name: Get Vector version
+      shell: vector --version
+      register: pkg_version
+    - name: Test Vector version
+      assert:
+        that:
+          - pkg_version: vector {{ def_vars.vector_version }}
+    - name: Vector validate
+      shell: vector validate
+      register: vector_validate
+    - name: Validate assert
+      assert:
+        that:
+          - vector_validate.rc == 0
