@@ -1,22 +1,22 @@
  variable "token" {
   type        = string
-  description = ""
+  description = "AQAAAAAvafbJAATuwdLAPg798Un2j3iJLzGhuuY"
 }
 
 variable "cloud_id" {
   type        = string
-  description = ""
+  description = "b1g19chq3o5d0u2d4se6"
 }
 
 variable "folder_id" {
   type        = string
-  description = ""
+  description = "b1giheq958o43g020idm"
 }
 
 variable "default_zone" {
   type        = string
   default     = "ru-central1-a"
-  description = ""
+  description = "e9bfl31n6cfsdq6stini"
 }
 variable "default_cidr" {
   type        = list(string)
@@ -41,7 +41,7 @@ variable "vms_ssh_root_key" {
   type = map(any)
   default = {
    serial-port-enable   = 1
-   ssh-keys             = "ssh-rsa 
+   ssh-keys             = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDCED/bj9qwN7AB3O7KUmgH2EadKCFpsQwAive7qtSYMEX4TeGILoCbDftmOI0vcNKy0SmJSVEL7t+hip6YwA67vDrvhkmsdUuGH0LbYoF0BX+VFBEbrS2z2wLrS+kzYACxt8BzADPZ+IFXGWXOmwk2aLQzteDMq9R83k+P2lgzQve5qNQzxbehDA5ouTtFsrR+v99AuFv15XQFsA1SjSUupSqfx2XbRZXp8t/JLDyBvqlxZitibrJvMrnIOfTLyFLNQOJNO8Sxb9kLtBgfFymauCdeOG9ngfbWV8rayaJPjIAEdW6qxATpq56qHcg3FNjWT9yRvaUFK5nTpNUvvGG2qb+GVM7u3zMHitHmFJqkKyhdIthXewLAOv6pp2tCVOLPg3oPYMt+ex2of0lMqVzJMXCV0Nx9pi5nJRlY3r5BzN9bdVBtQ4IUXmhLWQ4TtDtIarTy3wqELyQVYTTEhzBYfqlehEsT+i/533K6BiBV6OvPvAU+tfklj48C94zy7a0= root@kali"
   }
 }
 ###yandex_compute_image vars
