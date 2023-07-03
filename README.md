@@ -25,4 +25,5 @@
 22. [Тестирование roles](https://github.com/Firewal7/devops-netology/blob/main/08-ansible-05-testing.md)
 22. [Создание собственных модулей](https://github.com/Firewal7/devops-netology/blob/main/08-ansible-06-module.md)
 23. [Жизненный цикл ПО](https://github.com/Firewal7/devops-netology/blob/main/09-ci-01-intro.md)
+24. [Процессы CI/CD ](https://github.com/Firewal7/devops-netology/blob/main/09-ci-03-cicd.md)
     
