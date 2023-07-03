@@ -23,3 +23,6 @@
 20. [Использование Yandex Cloud](https://github.com/Firewal7/devops-netology/blob/main/08-ansible-03-yandex.md)
 21. [Работа с roles](https://github.com/Firewal7/devops-netology/blob/main/08-ansible-04-role.md)
 22. [Тестирование roles](https://github.com/Firewal7/devops-netology/blob/main/08-ansible-05-testing.md)
+22. [Создание собственных модулей](https://github.com/Firewal7/devops-netology/blob/main/08-ansible-06-module.md)
+23. [Жизненный цикл ПО](https://github.com/Firewal7/devops-netology/blob/main/09-ci-01-intro.md)
+    
