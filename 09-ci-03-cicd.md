@@ -8,7 +8,7 @@
 4. Запустите playbook, ожидайте успешного завершения.
 
 <details>
-<summary>└─# ansible-playbook -i inventory/cicd/hosts.yml site.yml</summary>
+<summary>ansible-playbook</summary>
 ┌──(root㉿kali)-[/home/…/lesson/devops-netology/09-ci-03-cicd/infrastructure]
 └─# sudo ansible-playbook -i inventory/cicd/hosts.yml site.yml
 
@@ -333,7 +333,9 @@ INFO: ------------------------------------------------------------------------
 
 7. Исправьте ошибки, которые он выявил, включая warnings.
 8. Запустите анализатор повторно — проверьте, что QG пройдены успешно.
+
 ![Ссылка 2](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-03-cicd-2.jpg)
+
 9. Сделайте скриншот успешного прохождения анализа, приложите к решению ДЗ.
 
 ### Знакомство с Nexus
