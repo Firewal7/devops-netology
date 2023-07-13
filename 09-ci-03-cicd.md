@@ -351,7 +351,7 @@ INFO: ------------------------------------------------------------------------
 3. Проверьте, что все файлы загрузились успешно.
 4. В ответе пришлите файл maven-metadata.xml для этого артефекта.
 
-[maven-metadata.xml](https://github.com/Firewal7/devops-netology/blob/main/)
+[maven-metadata.xml](https://github.com/Firewal7/devops-netology/blob/main/09-ci-03-cicd/infrastructure/files/maven-metadata.xml)
 
 ### Знакомство с Maven
 
@@ -411,4 +411,4 @@ total 16
 ```
 4. В ответе пришлите исправленный файл pom.xml.
 
-[pom.xml](https://github.com/Firewal7/devops-netology/blob/main/)
+[pom.xml](https://github.com/Firewal7/devops-netology/blob/main/09-ci-03-cicd/pom.xml)
