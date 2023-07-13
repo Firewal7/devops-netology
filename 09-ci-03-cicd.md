@@ -377,7 +377,7 @@ OS name: "linux", version: "6.0.0-kali6-amd64", arch: "amd64", family: "unix"
 1. Поменяйте в pom.xml блок с зависимостями под ваш артефакт из первого пункта задания для Nexus (java с версией 8_282).
 2. Запустите команду mvn package в директории с pom.xml, ожидайте успешного окончания.
 ```
-┌──(root㉿kali)-[/home/…/09-ci-03-cicd/infrastructure/apache-maven-3.9.3/bin]
+┌──(root㉿kali)-[/home/kali/lesson/devops-netology/09-ci-03-cicd]
 └─#  mvn package
 [INFO] Scanning for projects...
 [INFO]
@@ -404,10 +404,10 @@ Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons
 ┌──(root㉿kali)-[/home/kali/lesson/devops-netology/09-ci-03-cicd]
 └─# ls ~/.m2/repository/netology/java/8_282/
 total 16
--rw-r--r-- 1 root root 835 Mar 13 22:13 java-8_282-distrib.tar.gz
--rw-r--r-- 1 root root  40 Mar 13 22:13 java-8_282-distrib.tar.gz.sha1
--rw-r--r-- 1 root root 390 Mar 13 22:13 java-8_282.pom.lastUpdated
--rw-r--r-- 1 root root 175 Mar 13 22:13 _remote.repositories
+-rw-r--r-- 1 root root 835 Jul 13 12:30 java-8_282-distrib.tar.gz
+-rw-r--r-- 1 root root  40 Jul 13 12:30 java-8_282-distrib.tar.gz.sha1
+-rw-r--r-- 1 root root 390 Jul 13 12:30 java-8_282.pom.lastUpdated
+-rw-r--r-- 1 root root 175 Jul 13 12:30 _remote.repositories
 ```
 4. В ответе пришлите исправленный файл pom.xml.
 
