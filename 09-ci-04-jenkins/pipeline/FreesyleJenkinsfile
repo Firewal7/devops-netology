@@ -1,0 +1,4 @@
+pip3 install molecule==3.4.0 molecule-docker
+pip3 install --upgrade requests==2.26.0
+cd vector-role
+molecule test
