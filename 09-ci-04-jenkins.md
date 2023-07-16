@@ -7,7 +7,7 @@
 ![Ссылка 1](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-04-jenkins-1.jpg)
 
 2. Установить Jenkins при помощи playbook.
-```
+
 <details>
 <summary>ansible-playbook</summary>
 
@@ -108,7 +108,7 @@ jenkins-agent-01           : ok=17   changed=12   unreachable=0    failed=0    s
 jenkins-master-01          : ok=11   changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0 
 
 </details>
-```
+
 3. Запустить и проверить работоспособность.
 
 ![Ссылка 2](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-04-jenkins-2.jpg)
@@ -121,7 +121,6 @@ jenkins-master-01          : ok=11   changed=7    unreachable=0    failed=0    s
 
 1. Сделать Freestyle Job, который будет запускать molecule test из любого вашего репозитория с ролью.
 
-```
 <details>
 <summary>Freestyle Job</summary>
 
@@ -131,11 +130,9 @@ jenkins-master-01          : ok=11   changed=7    unreachable=0    failed=0    s
 ![Ссылка 7](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-04-jenkins-7.jpg)
 
 </details>
-```
 
 2. Сделать Declarative Pipeline Job, который будет запускать molecule test из любого вашего репозитория с ролью.
 
-```
 <details>
 <summary>Declarative Pipeline Job</summary>
 
@@ -144,7 +141,6 @@ jenkins-master-01          : ok=11   changed=7    unreachable=0    failed=0    s
 ![Ссылка 10](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-04-jenkins-10.jpg)
 
 </details>
-```
 
 3. Перенести Declarative Pipeline в репозиторий в файл Jenkinsfile.
 
