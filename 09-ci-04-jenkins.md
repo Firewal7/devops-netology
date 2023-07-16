@@ -144,6 +144,11 @@ jenkins-master-01          : ok=11   changed=7    unreachable=0    failed=0    s
 [Jenkinsfile](https://github.com/Firewal7/vector-role/blob/main/pipeline/jenkinsfile)
 
 4. Создать Multibranch Pipeline на запуск Jenkinsfile из репозитория.
+
+![Ссылка 11](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-04-jenkins-11.jpg)
+![Ссылка 12](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-04-jenkins-12.jpg)
+![Ссылка 13](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-04-jenkins-13.jpg)
+
 5. Создать Scripted Pipeline, наполнить его скриптом из pipeline.
 6. Внести необходимые изменения, чтобы Pipeline запускал ansible-playbook без флагов --check --diff, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и запускает прогон с флагами --check --diff.
 7. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл ScriptedJenkinsfile.
