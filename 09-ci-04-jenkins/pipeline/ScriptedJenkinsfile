@@ -1,0 +1,20 @@
+node("linux"){
+    parameters {
+        booleanParam(name: "prod_run", defaultValue: false)
+    }
+    stage("Git checkout"){
+        git credentialsId: 'git', url: 'git@github.com:aragastmatb/example-playbook.git'
+    }
+    stage('preparation for run playbook') {
+        sh 'sudo mkdir -p /opt/jdk/openjdk-11'
+    }
+    stage("Run playbook"){
+        if (params.prod_run){
+            sh 'ansible-playbook site.yml -i inventory/prod.yml'
+        }
+        else{
+            sh 'ansible-playbook site.yml -i inventory/prod.yml --check --diff'
+        }
+
+    }
+}
