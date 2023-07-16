@@ -1,0 +1,100 @@
+node("linux"){
+    vmnames = ['jenkins-master-auto', 'jenkins-agent-auto']
+
+    stage("install yc") {
+            sh '''curl https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash -s -- -a
+'''
+    }
+
+    stage("autentification in yc") {
+        ycprofile = sh(script: """yc config profile list""", returnStdout: true)
+        def arrayStr=[]
+        ycprofile.split().each {
+            arrayStr << it
+        }
+
+        if (arrayStr[0] == 'my-robot-profile') {
+            println 'profile already exists'
+        } else {
+            sh '''yc config profile create my-robot-profile'''
+
+            sh '''yc config set cloud-id b1g8dbhansmnljtkt5sb'''
+
+            sh '''yc config set folder-id b1gs8f7ibom6nv7b1qnd'''
+
+        }
+
+    }
+
+    stage("Git checkout"){
+        git branch: 'main', credentialsId: 'git', url: 'git@github.com:alshelk/jenkinsLesson.git'
+    }
+
+    stage("create vm in yc") {
+
+        listvm = readYaml (text: sh(script: '''yc compute instance list --format yaml''', returnStdout: true))
+
+        def exs = [:]
+        vmnames.each {
+            listvm.any { item ->
+                if (item.name == it) {
+                    println "instans ${it} already exists"
+                    exs[item.name] = item.network_interfaces.primary_v4_address.one_to_one_nat.address[0]
+
+                    return true
+                }
+            }
+            if ( exs[it] == null ) {
+                newvm = readYaml (text: sh(script: """yc compute instance create \
+                    --name ${it} \
+                    --zone ru-central1-a \
+                    --network-interface subnet-name=training,nat-ip-version=ipv4 \
+                    --create-boot-disk image-folder-id=standard-images,image-family=centos-7 \
+                    --ssh-key ~/.ssh/id_rsa.pub
+                  """, returnStdout: true))
+
+                exs[it] = newvm.network_interfaces.primary_v4_address.one_to_one_nat.address[0]
+
+            }
+
+            sh """ssh-keygen -R ${exs[it]}"""
+
+            sh """ssh-keyscan -t ecdsa,ed25519 -H ${exs[it]} >> ~/.ssh/known_hosts 2>&1"""
+
+        }
+
+        if (fileExists('playbook/inventory/cicd/hosts.yml')) {
+            sh '''rm playbook/inventory/cicd/hosts.yml'''
+        }
+
+        hosts = readYaml (text:"""---
+all:
+  hosts:
+    jenkins-master-auto:
+      ansible_host: ${exs["jenkins-master-auto"]}
+    jenkins-agent-auto:
+      ansible_host: ${exs["jenkins-agent-auto"]}
+  children:
+    jenkins:
+      children:
+        jenkins_masters:
+          hosts:
+            jenkins-master-auto:
+        jenkins_agents:
+          hosts:
+            jenkins-agent-auto:
+  vars:
+    ansible_connection_type: paramiko
+    ansible_user: yc-user""")
+
+    writeYaml charset: '', data: hosts, file: 'playbook/inventory/cicd/hosts.yml'
+
+    }
+
+    stage("Run playbook"){
+
+        sh 'ansible-playbook playbook/site.yml -i playbook/inventory/cicd/hosts.yml'
+
+    }
+
+}
