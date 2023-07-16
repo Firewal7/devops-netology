@@ -50,11 +50,13 @@ TASK [Install Jenkins and requirements] ****************************************
 changed: [jenkins-master-01]
 
 TASK [Ensure jenkins agents are present in known_hosts file] ***************************************************************************************************
-# 51.250.101.58:22 SSH-2.0-OpenSSH_7.4
-# 51.250.101.58:22 SSH-2.0-OpenSSH_7.4
-# 51.250.101.58:22 SSH-2.0-OpenSSH_7.4
-# 51.250.101.58:22 SSH-2.0-OpenSSH_7.4
-# 51.250.101.58:22 SSH-2.0-OpenSSH_7.4
+# 158.160.75.107:22 SSH-2.0-OpenSSH_7.4
+# 158.160.75.107:22 SSH-2.0-OpenSSH_7.4
+# 158.160.75.107:22 SSH-2.0-OpenSSH_7.4
+# 158.160.75.107:22 SSH-2.0-OpenSSH_7.4
+# 158.160.75.107:22 SSH-2.0-OpenSSH_7.4
+
+changed: [jenkins-master-01] => (item=je
 changed: [jenkins-master-01] => (item=jenkins-agent-01)
 [WARNING]: Module remote_tmp /home/jenkins/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when running as another user.
 To avoid this, create the remote_tmp dir with the correct permissions manually
