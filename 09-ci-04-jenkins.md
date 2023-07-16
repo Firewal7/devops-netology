@@ -150,8 +150,45 @@ jenkins-master-01          : ok=11   changed=7    unreachable=0    failed=0    s
 ![Ссылка 13](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-04-jenkins-13.jpg)
 
 5. Создать Scripted Pipeline, наполнить его скриптом из pipeline.
+
+[Scripted Pipeline](https://github.com/Firewal7/devops-netology/tree/main/09-ci-04-jenkins/pipeline)
+
+![Ссылка 14](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-04-jenkins-14.jpg)
+![Ссылка 15](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-04-jenkins-15.jpg)
+
 6. Внести необходимые изменения, чтобы Pipeline запускал ansible-playbook без флагов --check --diff, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и запускает прогон с флагами --check --diff.
+
+![Ссылка 16](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-04-jenkins-16.jpg)
+
+```
+node("linux"){
+    parameters {
+        booleanParam(name: "prod_run", defaultValue: false)
+    }
+    stage("Git checkout"){
+        git credentialsId: 'git', url: 'git@github.com:aragastmatb/example-playbook.git'
+    }
+    stage('preparation for run playbook') {
+        sh 'sudo mkdir -p /opt/jdk/openjdk-11'
+    }
+    stage("Run playbook"){
+        if (params.prod_run){
+            sh 'ansible-playbook site.yml -i inventory/prod.yml'
+        }
+        else{
+            sh 'ansible-playbook site.yml -i inventory/prod.yml --check --diff'
+        }
+
+    }
+}
+```
+
 7. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл ScriptedJenkinsfile.
+
+![Ссылка 17](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-04-jenkins-17.jpg)
+
 8. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.
 
+[Declarative Pipeline](https://github.com/Firewal7/vector-role/blob/main/pipeline/jenkinsfile)
+[Scripted Pipeline](https://github.com/Firewal7/devops-netology/blob/main/09-ci-04-jenkins/pipeline/ScriptedJenkinsfile)
 
