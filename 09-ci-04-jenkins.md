@@ -110,9 +110,6 @@ jenkins-master-01          : ok=11   changed=7    unreachable=0    failed=0    s
 </details>
 
 3. Запустить и проверить работоспособность.
-
-![Ссылка 2](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-04-jenkins-2.jpg)
-
 4. Сделать первоначальную настройку.
 
 ![Ссылка 3](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-04-jenkins-3.jpg)
