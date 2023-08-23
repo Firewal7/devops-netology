@@ -26,4 +26,5 @@
 22. [Создание собственных модулей](https://github.com/Firewal7/devops-netology/blob/main/08-ansible-06-module.md)
 23. [Жизненный цикл ПО](https://github.com/Firewal7/devops-netology/blob/main/09-ci-01-intro.md)
 24. [Процессы CI/CD ](https://github.com/Firewal7/devops-netology/blob/main/09-ci-03-cicd.md)
-    
+25. [Jenkins](https://github.com/Firewal7/devops-netology/blob/main/09-ci-04-jenkins.md)    
+26. [TeamCity](https://github.com/Firewal7/devops-netology/blob/main/09-ci-05-teamcity.md) 
