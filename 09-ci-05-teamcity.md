@@ -9,7 +9,9 @@
 ![Ссылка 1](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-05-teamcity-1.jpg)
 
 4. Авторизуйте агент.
+
 ![Ссылка 2](https://github.com/Firewal7/devops-netology/blob/main/image/09-ci-05-teamcity-2.jpg)
+
 5. Сделайте fork репозитория.
 6. Создайте VM (2CPU4RAM) и запустите playbook.
 
@@ -143,10 +145,10 @@ public String sayHunter(){
 ```
 11. Дополните тест для нового метода на поиск слова hunter в новой реплике.
 ```
-	@Test
-	public void netologySaysHunter() {
-		assertThat(welcomer.sayHunter(), containsString("hunter"));
-	}
+@Test
+public void netologySaysHunter() {
+assertThat(welcomer.sayHunter(), containsString("hunter"));
+}
 
 ```
 12. Сделайте [push](https://github.com/Firewal7/example-teamcity/commit/0555cd5b94c450bc5ed106ccc152da74acac5f15) всех изменений в новую ветку репозитория.
