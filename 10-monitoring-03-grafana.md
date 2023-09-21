@@ -25,7 +25,7 @@
 - Подключите поднятый вами prometheus, как источник данных.
 - Решение домашнего задания — скриншот веб-интерфейса grafana со списком подключенных Datasource.
 
-![Ссылка 1]()
+![Ссылка 1](https://github.com/Firewal7/devops-netology/blob/main/image/10-monitoring-03-grafana-1.jpg)
 
 Задание 2
 
@@ -59,14 +59,14 @@ node_memory_MemFree_bytes / (1024 * 1024)
 ```
 Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
 
-![Ссылка 2]()
+![Ссылка 2](https://github.com/Firewal7/devops-netology/blob/main/image/10-monitoring-03-grafana-2.jpg)
 
 Задание 3
 
 - Создайте для каждой Dashboard подходящее правило alert — можно обратиться к первой лекции в блоке «Мониторинг».
 - В качестве решения задания приведите скриншот вашей итоговой Dashboard.
 
-![Ссылка 3]()
+![Ссылка 3](https://github.com/Firewal7/devops-netology/blob/main/image/10-monitoring-03-grafana-3.jpg)
 
 Задание 4
 
