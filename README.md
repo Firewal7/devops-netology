@@ -27,4 +27,9 @@
 23. [Жизненный цикл ПО](https://github.com/Firewal7/devops-netology/blob/main/09-ci-01-intro.md)
 24. [Процессы CI/CD ](https://github.com/Firewal7/devops-netology/blob/main/09-ci-03-cicd.md)
 25. [Jenkins](https://github.com/Firewal7/devops-netology/blob/main/09-ci-04-jenkins.md)    
-26. [TeamCity](https://github.com/Firewal7/devops-netology/blob/main/09-ci-05-teamcity.md) 
+26. [TeamCity](https://github.com/Firewal7/devops-netology/blob/main/09-ci-05-teamcity.md)
+27. [Системы мониторинга](https://github.com/Firewal7/devops-netology/blob/main/10-monitoring-02-systems.md)
+28. [Средство визуализации Grafana](https://github.com/Firewal7/devops-netology/blob/main/10-monitoring-03-grafana.md)
+29. [Система сбора логов Elastic Stack](https://github.com/Firewal7/devops-netology/blob/main/10-monitoring-04-elk.md)
+30. [Платформа мониторинга Sentry](https://github.com/Firewal7/devops-netology/blob/main/10-monitoring-05-sentry.md)
+    
