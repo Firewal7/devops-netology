@@ -38,11 +38,11 @@ Filebeat следует сконфигурировать для отправки
 
 - скриншот docker ps через 5 минут после старта всех контейнеров (их должно быть 5);
 
-![Ссылка 1]()
+![Ссылка 1](https://github.com/Firewal7/devops-netology/blob/main/image/10-monitoring-04-elk-1.jpg)
 
 - скриншот интерфейса kibana;
 
-![Ссылка 2]()
+![Ссылка 2](https://github.com/Firewal7/devops-netology/blob/main/image/10-monitoring-04-elk-2.jpg)
 
 - docker-compose манифест (если вы не использовали директорию help);
 - ваши yml-конфигурации для стека (если вы не использовали директорию help).
@@ -51,11 +51,11 @@ Filebeat следует сконфигурировать для отправки
 
 Перейдите в меню создания index-patterns в kibana и создайте несколько index-patterns из имеющихся.
 
-![Ссылка 3]()
+![Ссылка 3](https://github.com/Firewal7/devops-netology/blob/main/image/10-monitoring-04-elk-3.jpg)
 
 Перейдите в меню просмотра логов в kibana (Discover) и самостоятельно изучите, как отображаются логи и как производить поиск по логам.
 
-![Ссылка 4]()
+![Ссылка 4](https://github.com/Firewal7/devops-netology/blob/main/image/10-monitoring-04-elk-4.jpg)
 
 В манифесте директории help также приведенно dummy-приложение, которое генерирует рандомные события в stdout-контейнера. Эти логи должны порождать индекс logstash-* в elasticsearch. Если этого индекса нет — воспользуйтесь советами и источниками из раздела «Дополнительные ссылки» этого задания.
 
