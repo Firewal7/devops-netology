@@ -32,4 +32,5 @@
 28. [Средство визуализации Grafana](https://github.com/Firewal7/devops-netology/blob/main/10-monitoring-03-grafana.md)
 29. [Система сбора логов Elastic Stack](https://github.com/Firewal7/devops-netology/blob/main/10-monitoring-04-elk.md)
 30. [Платформа мониторинга Sentry](https://github.com/Firewal7/devops-netology/blob/main/10-monitoring-05-sentry.md)
+31. [Введение в микросервисы](https://github.com/Firewal7/devops-netology/blob/main/11-microservices-01-intro.md)
     
