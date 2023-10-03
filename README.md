@@ -33,4 +33,7 @@
 29. [Система сбора логов Elastic Stack](https://github.com/Firewal7/devops-netology/blob/main/10-monitoring-04-elk.md)
 30. [Платформа мониторинга Sentry](https://github.com/Firewal7/devops-netology/blob/main/10-monitoring-05-sentry.md)
 31. [Введение в микросервисы](https://github.com/Firewal7/devops-netology/blob/main/11-microservices-01-intro.md)
+32. [Микросервисы: принципы](https://github.com/Firewal7/devops-netology/blob/main/11-microservices-02-principles.md)
+33. [Микросервисы: подходы](https://github.com/Firewal7/devops-netology/blob/main/11-microservices-03-approaches.md)
+34. [Микросервисы: масштабирование](https://github.com/Firewal7/devops-netology/blob/main/11-microservices-04-scaling.md)
     
