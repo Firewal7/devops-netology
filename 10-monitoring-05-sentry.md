@@ -19,7 +19,7 @@ Free Cloud account имеет ограничения:
 
 В качестве решения задания пришлите скриншот меню Projects.
 
-![Ссылка 1](https://github.com/Firewal7/devops-netology/blob/main/image/10-monitoring-05-sentry-1.jpg)
+![Ссылка 1](https://github.com/Firewal7/devops-netology/blob/main/image/12-kuber-homeworks-1.1.jpg)
 
 ### Задание 2
 
