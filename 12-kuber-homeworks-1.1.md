@@ -203,7 +203,7 @@ cd .kube
 microk8s config > config - там берём token
 ```
 
-![Ссылка 1]()
+![Ссылка 1](https://github.com/Firewal7/devops-netology/blob/main/image/12-kuber-homeworks-1.1.jpg)
 
 ------
 
