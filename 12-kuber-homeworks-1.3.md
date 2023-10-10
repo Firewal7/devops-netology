@@ -27,6 +27,7 @@
 1. Создать Deployment приложения, состоящего из двух контейнеров — nginx и multitool. Решить возникшую ошибку.
 
 ```
+user@vm1:~$ cat deployment.yaml
 apiVersion : apps/v1
 kind: Deployment
 metadata:
@@ -158,6 +159,7 @@ Commercial support is available at
 1. Создать Deployment приложения nginx и обеспечить старт контейнера только после того, как будет запущен сервис этого приложения.
 
 ```
+cat deployment2.yaml
 apiVersion: v1
 kind: Pod
 metadata:
