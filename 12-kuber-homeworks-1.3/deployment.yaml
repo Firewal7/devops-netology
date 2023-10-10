@@ -1,0 +1,29 @@
+
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: netology1
+  labels:
+    app: netol-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: netol-1
+  template:
+    metadata:
+      labels:
+        app: netol-1
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
+        - name: multitool
+          image: wbitt/network-multitool
+          ports:
+            - containerPort: 8080
+          env:
+            - name: HTTP_PORT
+              value: "8080"
