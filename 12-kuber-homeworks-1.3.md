@@ -26,8 +26,7 @@
 
 1. Создать Deployment приложения, состоящего из двух контейнеров — nginx и multitool. Решить возникшую ошибку.
 
-<details>
-<summary>cat deployment.yaml</summary>
+```
 apiVersion : apps/v1
 kind: Deployment
 metadata:
@@ -56,7 +55,7 @@ spec:
           env:
             - name: HTTP_PORT
               value: "8080"
-</details>
+```
 ```
 user@vm1:~$ kubectl apply -f deployment.yaml
 deployment.apps/netology1 created
@@ -158,8 +157,7 @@ Commercial support is available at
 
 1. Создать Deployment приложения nginx и обеспечить старт контейнера только после того, как будет запущен сервис этого приложения.
 
-<details>
-<summary>cat deployment2.yaml</summary>
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -183,7 +181,7 @@ spec:
   - name: init-myservice
     image: busybox:1.28
     command: ['sh', '-c', 'until nslookup nginx-svc2; do echo waiting for nginx-svc2; sleep 2; done;']
-</details>
+```
 ```
 root@vm1:/home/user# microk8s kubectl apply -f deployment2.yaml
 pod/myapp-pod created
@@ -199,8 +197,7 @@ Error from server (BadRequest): container "myapp-container" in pod "myapp-pod" i
 
 3. Создать и запустить Service. Убедиться, что Init запустился.
 
-<details>
-<summary>cat service2.yaml</summary>
+```
 root@vm1:/home/user# cat service2.yaml
 apiVersion: v1
 kind: Service
@@ -213,7 +210,7 @@ spec:
       targetPort: 80
   selector:
     app: myapp
-</details>
+```
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f service2.yaml
