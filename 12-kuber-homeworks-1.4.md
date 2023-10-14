@@ -27,7 +27,7 @@
 1. Создать Deployment приложения, состоящего из двух контейнеров (nginx и multitool), с количеством реплик 3 шт.
 2. Создать Service, который обеспечит доступ внутри кластера до контейнеров приложения из п.1 по порту 9001 — nginx 80, по 9002 — multitool 8080.
 
-[deployment.yaml]() 
+[deployment.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-1.4/deployment.yaml) 
 
 ```
 user@epdpn6ma3pu39gos0stk:~$ kubectl apply -f deployment.yaml
@@ -88,7 +88,7 @@ WBITT Network MultiTool (with NGINX) - netology-task-1-6d55d7c5f9-jfqwx - 10.1.2
 2. Продемонстрировать доступ с помощью браузера или `curl` с локального компьютера.
 3. Предоставить манифест и Service в решении, а также скриншоты или вывод команды п.2.
 
-[NodePortService.yaml]() 
+[NodePortService.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-1.4/NodePortService.yaml) 
 
 ```
 user@epdpn6ma3pu39gos0stk:~$ kubectl apply -f NodePortService.yaml                                                                                          service/netology-task-2 created
@@ -99,7 +99,7 @@ netology-task-1   ClusterIP   10.152.183.250   <none>        9001/TCP,9002/TCP  
 netology-task-2   NodePort    10.152.183.51    <none>        9001:30292/TCP      14s
 ```
 
-![Ссылка 1]()
+![Ссылка 1](https://github.com/Firewal7/devops-netology/blob/main/image/12-kuber-homeworks-1.4-1.jpg)
 
 ------
 
