@@ -27,7 +27,7 @@
 
 1. Создать Deployment приложения _frontend_ из образа nginx с количеством реплик 3 шт.
 
-[frontend.yaml]()
+[frontend.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-1.5/frontend.yaml)
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f frontend.yaml
@@ -40,11 +40,12 @@ frontend   3/3     3            3           13s
 
 2. Создать Deployment приложения _backend_ из образа multitool. 
 
-[backend.yaml]()
+[backend.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-1.5/backend.yaml)
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f backend.yaml
 deployment.apps/backend created
+
 root@vm1:/home/user# microk8s kubectl get deployments
 NAME       READY   UP-TO-DATE   AVAILABLE   AGE
 frontend   3/3     3            3           2m6s
@@ -53,15 +54,17 @@ backend    1/1     1            1           8s
 
 3. Добавить Service, которые обеспечат доступ к обоим приложениям внутри кластера. 
 
-[service-backend.yaml]()
+[service-backend.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-1.5/service-backend.yaml)
 
-[service-frontend.yaml]()
+[service-frontend.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-1.5/service-frontend.yaml)
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f service-frontend.yaml
 service/svc-front created
+
 root@vm1:/home/user# microk8s kubectl apply -f service-backend.yaml
 service/svc-back created
+
 root@vm1:/home/user# microk8s kubectl get svc
 NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
 kubernetes   ClusterIP   10.152.183.1     <none>        443/TCP   25m
@@ -149,7 +152,7 @@ Ingress is enabled
 ```
 2. Создать Ingress, обеспечивающий доступ снаружи по IP-адресу кластера MicroK8S так, чтобы при запросе только по адресу открывался _frontend_ а при добавлении /api - _backend_.
 
-[ingress.yaml]()
+[ingress.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-1.5/ingress.yaml)
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f ingress.yaml
