@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-back
+spec:
+  ports:
+    - name: nvc-back
+      port: 80
+  selector:
+    app: back
+  type: ClusterIP
