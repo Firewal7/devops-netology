@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: daemonset
+  labels:
+    app: appdaemon
+spec:
+  selector:
+    matchLabels:
+      app: appdaemon
+  template:
+    metadata:
+      labels:
+        app: appdaemon
+    spec:
+      containers:
+      - name: multitool2
+        image: wbitt/network-multitool
+        volumeMounts:
+        - name: volume2
+          mountPath: /var/log/syslog
+        env:
+        - name: HTTP_PORT
+          value: "80"
+        ports:
+        - containerPort: 80
+          name: http-port
+        resources:
+          requests:
+            cpu: "1m"
+            memory: "20Mi"
+          limits:
+            cpu: "10m"
+            memory: "20Mi"
+     volumes:
+       - name: volume2
+         hostPath:
+          path: /var/log/syslog

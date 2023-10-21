@@ -1,0 +1,44 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  labels:
+    app: main
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: main
+  template:
+    metadata:
+      labels:
+        app: main
+    spec:
+      containers:
+        - name: busybox
+          image: busybox
+          command: ['sh', '-c', 'while true; do watch -n 5 date >> /my/output.txt; sleep 5; done']
+          volumeMounts:
+          - mountPath: /my
+            name: volume
+        - name: multitool
+          image: wbitt/network-multitool
+          volumeMounts:
+          - mountPath: /my
+            name: volume
+          env:
+          - name: HTTP_PORT
+            value: "80"
+          ports:
+          - containerPort: 80
+            name: http-port
+          resources:
+            requests:
+              cpu: "1m"
+              memory: "20Mi"
+            limits:
+              cpu: "10m"
+              memory: "20Mi"
+      volumes:
+      - name: volume
+        emptyDir: {}
