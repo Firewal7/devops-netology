@@ -34,7 +34,7 @@
 4. Продемонстрировать, что multitool может читать файл, который периодоически обновляется.
 5. Предоставить манифесты Deployment в решении, а также скриншоты или вывод команды из п. 4.
 
-[deployment1.yaml]()
+[deployment1.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.1/deployment1.yaml)
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f deployment1.yaml
@@ -72,7 +72,7 @@ Every 5.0s: date                                            2023-10-21 08:34:47
 3. Продемонстрировать возможность чтения файла изнутри пода.
 4. Предоставить манифесты Deployment, а также скриншоты или вывод команды из п. 2.
 
-[deployment2.yaml]()
+[deployment2.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.1/deployment2.yaml)
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f deployment2.yaml
