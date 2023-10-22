@@ -31,7 +31,7 @@
 
 1. Создать Deployment приложения, состоящего из контейнеров busybox и multitool.
 
-[deployment1.yaml]()
+[deployment1.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.2/deployment1.yaml)
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f deployment1.yaml
@@ -39,8 +39,8 @@ deployment.apps/deployment created
 ```
 2. Создать PV и PVC для подключения папки на локальной ноде, которая будет использована в поде.
 
-[pvc.yaml ]()
-[pv.yaml ]()
+[pvc.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.2/pvc.yaml)
+[pv.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.2/pv.yaml)
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f pv.yaml
@@ -129,9 +129,9 @@ root@vm1:/home/user# ls /my/pv/output.txt
 
 2. Создать Deployment приложения состоящего из multitool, и подключить к нему PV, созданный автоматически на сервере NFS.
 
-[deployment2.yaml]()
-[pvc-nfs.yaml]()
-[sc-nfs.yaml]()
+[deployment2.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.2/deployment2.yaml)
+[pvc-nfs.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.2/pvc-nfs.yaml)
+[sc-nfs.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.2/sc-nfs.yaml)
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f deployment2.yaml
