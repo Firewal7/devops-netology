@@ -100,8 +100,6 @@ root@vm1:/home/user# kubectl get pv
 NAME   CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM         STORAGECLASS   REASON   AGE
 pv     1Gi        RWO            Delete           Bound    default/pvc                           3m46s
 
-В конфиге pv, есть строчка persistentVolumeReclaimPolicy: Delete.
-После удаления pvc, удаляется pv. Если этой строчки не было, то pv бы не удалялся.
 ```
 5. Продемонстрировать, что файл сохранился на локальном диске ноды. Удалить PV.  Продемонстрировать что произошло с файлом после удаления PV. Пояснить, почему.
 ```
@@ -114,7 +112,8 @@ persistentvolume "pv" deleted
 root@vm1:/home/user# ls /my/pv/output.txt
 /my/pv/output.txt
 ```
-
+В конфиге pv, есть строчка persistentVolumeReclaimPolicy: Delete.
+Это означает что после удаления PV ресурсы из внешних провайдеров автоматически удаляются (работает только в облачных Storage), в нашем случае локальный файл не является облачным хранилищем, поэтому он остался.
 ------
 
 ### Задание 2
