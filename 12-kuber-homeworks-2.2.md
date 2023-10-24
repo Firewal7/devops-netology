@@ -113,7 +113,7 @@ root@vm1:/home/user# ls /my/pv/output.txt
 /my/pv/output.txt
 ```
 
-Если у Persistent Volume (PV) установлена политика удаления (persistentVolumeReclaimPolicy: Delete), то при удалении Persistent Volume Claim (PVC) данные, связанные с PV, будут удалены, и PV будет перезаписан для будущего использования.
+При удалении PV не удаляются данные, связанные с PV. Они сохраняются на диске ноды. Удаление PV лишь освобождает ресурсы PV для будущего использования и разрывает связь между PV и PVC.
 
 ------
 
