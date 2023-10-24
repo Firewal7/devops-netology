@@ -100,6 +100,8 @@ root@vm1:/home/user# kubectl get pv
 NAME   CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM         STORAGECLASS   REASON   AGE
 pv     1Gi        RWO            Delete           Bound    default/pvc                           3m46s
 
+Файл сохранился на локальном диске ноды.
+
 ```
 5. Продемонстрировать, что файл сохранился на локальном диске ноды. Удалить PV.  Продемонстрировать что произошло с файлом после удаления PV. Пояснить, почему.
 ```
