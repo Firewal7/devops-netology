@@ -113,8 +113,7 @@ root@vm1:/home/user# ls /my/pv/output.txt
 /my/pv/output.txt
 ```
 
-В конфиге pv, есть строчка persistentVolumeReclaimPolicy: Delete.
-Это означает что после удаления PV ресурсы из внешних провайдеров автоматически удаляются (работает только в облачных Storage), в нашем случае локальный файл не является облачным хранилищем, поэтому он остался.
+Если у Persistent Volume (PV) установлена политика удаления (persistentVolumeReclaimPolicy: Delete), то при удалении Persistent Volume Claim (PVC) данные, связанные с PV, будут удалены, и PV будет перезаписан для будущего использования.
 
 ------
 
