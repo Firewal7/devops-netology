@@ -26,7 +26,7 @@
 
 1. Создать Deployment приложения, состоящего из контейнеров busybox и multitool.
 
-[deployment1.yaml]()
+[deployment1.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.3/deployment1.yaml)
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f deployment1.yaml
@@ -38,7 +38,7 @@ deployment-757dd787bb-4qj9m   0/2     ContainerCreating   0          68s
 ```
 2. Решить возникшую проблему с помощью ConfigMap.
 
-[configmap1.yaml]()
+[configmap1.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.3/configmap1.yaml)
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f configmap1.yaml
@@ -53,7 +53,7 @@ deployment-757dd787bb-4qj9m   2/2     Running   0          4m25s
 ```
 4. Сделать простую веб-страницу и подключить её к Nginx с помощью ConfigMap. Подключить Service и показать вывод curl или в браузере.
 
-[service.yaml]()
+[service.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.3/service.yaml)
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f service.yaml
@@ -78,7 +78,7 @@ root@vm1:/home/user# curl 51.250.23.94:30000
 
 1. Создать Deployment приложения, состоящего из Nginx.
 
-[deployment2.yaml]()
+[deployment2.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.3/deployment2.yaml)
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f deployment2.yaml
@@ -86,7 +86,7 @@ deployment.apps/deployment2 created
 ```
 2. Создать собственную веб-страницу и подключить её как ConfigMap к приложению.
 
-[configmap.yaml]()
+[configmap.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.3/configmap.yaml)
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f configmap.yaml
@@ -103,9 +103,9 @@ secret/secret-tlsname created
 ```
 4. Создать Ingress и необходимый Service, подключить к нему SSL в вид. Продемонстировать доступ к приложению по HTTPS. 
 
-[ingress.yaml]()
+[ingress.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.3/ingress.yaml)
 
-[service.yaml]()
+[service.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.3/service.yaml)
 
 ```
 root@vm1:/home/user# microk8s kubectl apply -f ingress.yaml
