@@ -1,0 +1,43 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: deployment2
+  labels:
+    app: main
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: main
+  template:
+    metadata:
+      labels:
+        app: main
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.14.2
+          env:
+            - name: HTTP_PORT
+              value: "80"
+            - name: HTTPS_PORT
+              value: "443"
+          volumeMounts:
+          - mountPath: /usr/share/nginx/html/
+            name: volume
+          ports:
+            - containerPort: 80
+              name: http-port
+            - containerPort: 443
+              name: https-port
+          resources:
+            requests:
+              cpu: "1m"
+              memory: "20Mi"
+            limits:
+              cpu: "10m"
+              memory: "20Mi"
+      volumes:
+      - name: volume
+        configMap:
+          name: indexname
