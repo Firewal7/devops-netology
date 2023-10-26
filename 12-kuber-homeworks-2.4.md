@@ -105,9 +105,9 @@ rules:
 ```
 5. Предоставьте манифесты и скриншоты и/или вывод необходимых команд.
 
-[role_binding.yaml]()
+[role_binding.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.4/role_binding.yaml)
 
-[role.yaml]()
+[role.yaml](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.4/role.yaml)
 
 ------
 
