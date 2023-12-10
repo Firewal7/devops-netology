@@ -23,7 +23,7 @@
 3. Запуск etcd производить на мастере.
 4. Способ установки выбрать самостоятельно.
 
-![Ссылка 1](https://github.com/Firewal7/devops-netology/blob/main/image/)
+![Ссылка 1](https://github.com/Firewal7/devops-netology/blob/main/image/13-kuber-homeworks-3.2.jpg)
 
 ```
 root@master:/home/user# git clone https://github.com/kubernetes-sigs/kubespray
