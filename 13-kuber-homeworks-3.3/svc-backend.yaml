@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: app
+spec:
+  ports:
+    - name: web
+      port: 80
+  selector:
+    app: backend
