@@ -35,17 +35,17 @@ namespace/app created
 
 ### Создаем deployment и сервисы к ним.
 
-Конфиг: [frontend.yaml](frontend.yaml)
+Конфиг: [frontend.yaml](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.3/frontend.yaml)
 
-Конфиг: [backend.yaml](backend.yaml)
+Конфиг: [backend.yaml](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.3/backend.yaml)
 
-Конфиг: [cache.yaml](cache.yaml)
+Конфиг: [cache.yaml](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.3/cache.yaml)
 
-Конфиг: [svc-frontend.yaml](svc-frontend.yaml)
+Конфиг: [svc-frontend.yaml](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.3/svc-frontend.yaml)
 
-Конфиг: [svc-backend.yaml](svc-backend.yaml)
+Конфиг: [svc-backend.yaml](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.3/svc-backend.yaml)
 
-Конфиг: [svc-cache.yaml](svc-cache.yaml)
+Конфиг: [svc-cache.yaml](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.3/svc-cache.yaml)
 ```
 root@vm:/home/user# microk8s kubectl apply -f frontend.yaml
 deployment.apps/frontend created
@@ -83,13 +83,13 @@ cache-575bd6d866-87w9z      1/1     Running   0          2m6s    10.1.141.69   v
 
 Создаем сетевые политики.
 
-Конфиг: [np-zapret.yaml](np-zapret.yaml)
+Конфиг: [np-zapret.yaml](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.3/np-zapret.yaml)
 
-Конфиг: [np-frontend.yaml](np-frontend.yaml)
+Конфиг: [np-frontend.yaml](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.3/np-frontend.yaml)
 
-Конфиг: [np-backend.yaml](np-backend.yaml)
+Конфиг: [np-backend.yaml](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.3/np-backend.yaml)
 
-Конфиг: [np-cache.yaml](np-cache.yaml)
+Конфиг: [np-cache.yaml](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.3/np-cache.yaml)
 
 ```
 
