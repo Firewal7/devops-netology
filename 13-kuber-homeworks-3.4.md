@@ -33,9 +33,9 @@
 
 1. Создать deployment приложения с контейнерами nginx и multitool. Версию nginx взять 1.19. Количество реплик — 5.
 
-Конфиг: [deployment.yaml](deployment.yaml)
+Конфиг: [deployment.yaml](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.4/deployment.yaml)
 
-Конфиг: [svc.yaml](svc.yaml)
+Конфиг: [svc.yaml](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.4/svc.yaml)
 
 ```
 root@vm1:~# microk8s kubectl apply -f deployment.yaml
