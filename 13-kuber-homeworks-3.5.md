@@ -41,71 +41,39 @@ deployment.apps/web-consumer created
 deployment.apps/auth-db created
 service/auth-db created
 
-root@vm2:~# kubectl get pod -n web
-NAME                            READY   STATUS    RESTARTS   AGE
-web-consumer-5f87765478-gwlkh   1/1     Running   0          22m
-web-consumer-5f87765478-gpbzd   1/1     Running   0          22m
+root@vm1:~# kubectl get deployments -A -o wide
+NAMESPACE     NAME                      READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS                IMAGES                                      SELECTOR
+kube-system   coredns                   1/1     1            1           2m15s   coredns                   coredns/coredns:1.10.1                      k8s-app=kube-dns
+kube-system   calico-kube-controllers   1/1     1            1           2m14s   calico-kube-controllers   docker.io/calico/kube-controllers:v3.25.1   k8s-app=calico-kube-controllers
+web           web-consumer              2/2     2            2           14s     busybox                   radial/busyboxplus:curl                     app=web-consumer
+data          auth-db                   1/1     1            1           14s     nginx                     nginx:1.19.1                                app=auth-db
 
-root@vm2:~# kubectl get pod -n data
-NAME                       READY   STATUS    RESTARTS   AGE
-auth-db-7b5cdbdc77-tq5rl   1/1     Running   0          22m
+Выводим IP адреса pod-ов
 
-root@vm2:~# kubectl get all -n data
-NAME                           READY   STATUS    RESTARTS   AGE
-pod/auth-db-7b5cdbdc77-tq5rl   1/1     Running   0          23m
+root@vm1:~# kubectl get pods -n data -o wide
+NAME                       READY   STATUS    RESTARTS   AGE    IP           NODE   NOMINATED NODE   READINESS GATES
+auth-db-7b5cdbdc77-n6rc9   1/1     Running   0          2m5s   10.1.225.4   vm1    <none>           <none>
 
-NAME              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
-service/auth-db   ClusterIP   10.152.183.38   <none>        80/TCP    23m
+root@vm1:~# kubectl get pods -n web -o wide
+NAME                            READY   STATUS    RESTARTS   AGE     IP           NODE   NOMINATED NODE   READINESS GATES
+web-consumer-5f87765478-ppqh6   1/1     Running   0          3m22s   10.1.225.3   vm1    <none>           <none>
+web-consumer-5f87765478-t8fll   1/1     Running   0          3m22s   10.1.225.5   vm1    <none>           <none>
 
-NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/auth-db   1/1     1            1           23m
+Заходим в первый под web-consumer-5f87765478-ppqh6 с адресом 10.1.225.3, и пробуем оттуда сначала пинговать auth-db по адресу 10.1.225.4. Как видим приложение доступно:
 
-NAME                                 DESIRED   CURRENT   READY   AGE
-replicaset.apps/auth-db-7b5cdbdc77   1         1         1       23m
-
-Смотрим логи:
-
-root@vm2:~# kubectl logs pod/web-consumer-5f87765478-gpbzd -n web
-curl: (6) Couldn't resolve host 'auth-db'
-curl: (6) Couldn't resolve host 'auth-db'
-curl: (6) Couldn't resolve host 'auth-db'
-curl: (6) Couldn't resolve host 'auth-db'
-curl: (6) Couldn't resolve host 'auth-db'
-curl: (6) Couldn't resolve host 'auth-db'
-curl: (6) Couldn't resolve host 'auth-db'
-curl: (6) Couldn't resolve host 'auth-db'
-curl: (6) Couldn't resolve host 'auth-db'
-curl: (6) Couldn't resolve host 'auth-db'
-curl: (6) Couldn't resolve host 'auth-db'
-curl: (6) Couldn't resolve host 'auth-db'
-curl: (6) Couldn't resolve host 'auth-db'
-curl: (6) Couldn't resolve host 'auth-db'
-
-Хост не знает dns имени auth-db.
-
-Надо записать в dns запись auth-db.
-
-Пропишу в каждом контейнере в файле hosts.
-
-root@vm2:~# kubectl exec -it pod/web-consumer-5f87765478-gpbzd -n web -c busybox -- bin/sh
+root@vm1:~# kubectl exec -it pod/web-consumer-5f87765478-ppqh6 -n web -c busybox -- bin/sh
 bin/sh: shopt: not found
 
-[ root@web-consumer-5f87765478-gpbzd:/ ]$ echo 10.152.183.38 auth-db >> /etc/hosts
+[ root@web-consumer-5f87765478-ppqh6:/ ]$ ping 10.1.225.4
+PING 10.1.225.4 (10.1.225.4): 56 data bytes
+64 bytes from 10.1.225.4: seq=0 ttl=63 time=0.134 ms
+64 bytes from 10.1.225.4: seq=1 ttl=63 time=0.067 ms
+^C
+--- 10.1.225.4 ping statistics ---
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max = 0.067/0.089/0.134 ms
 
-[ root@web-consumer-5f87765478-gpbzd:/ ]$ cat /etc/hosts
-# Kubernetes-managed hosts file.
-127.0.0.1       localhost
-::1     localhost ip6-localhost ip6-loopback
-fe00::0 ip6-localnet
-fe00::0 ip6-mcastprefix
-fe00::1 ip6-allnodes
-fe00::2 ip6-allrouters
-10.1.185.196    web-consumer-5f87765478-gpbzd
-10.152.183.38 auth-db
-
-Проверим:
-
-[ root@web-consumer-5f87765478-gpbzd:/ ]$ curl auth-db
+[ root@web-consumer-5f87765478-ppqh6:/ ]$ curl 10.1.225.4
 <!DOCTYPE html>
 <html>
 <head>
@@ -132,14 +100,21 @@ Commercial support is available at
 </body>
 </html>
 
-Делаем тоже самое со 2м pod:
+Заходим во второй pod:
 
-root@vm2:~# kubectl exec -it pod/web-consumer-5f87765478-gpbzd -n web -c busybox -- bin/sh
+root@vm1:~# kubectl exec -it pod/web-consumer-5f87765478-t8fll -n web -c busybox -- bin/sh
 bin/sh: shopt: not found
 
-[ root@web-consumer-5f87765478-gpbzd:/ ]$ echo 10.152.183.38 auth-db >> /etc/hosts
+[ root@web-consumer-5f87765478-t8fll:/ ]$ ping 10.1.225.4
+PING 10.1.225.4 (10.1.225.4): 56 data bytes
+64 bytes from 10.1.225.4: seq=0 ttl=63 time=0.085 ms
+64 bytes from 10.1.225.4: seq=1 ttl=63 time=0.073 ms
+^C
+--- 10.1.225.4 ping statistics ---
+2 packets transmitted, 2 packets received, 0% packet loss
+round-trip min/avg/max = 0.073/0.079/0.085 ms
 
-[ root@web-consumer-5f87765478-gpbzd:/ ]$ curl auth-db
+[ root@web-consumer-5f87765478-t8fll:/ ]$ curl 10.1.225.4
 <!DOCTYPE html>
 <html>
 <head>
@@ -165,6 +140,7 @@ Commercial support is available at
 <p><em>Thank you for using nginx.</em></p>
 </body>
 </html>
+
 ```
 
 ### Правила приёма работы
