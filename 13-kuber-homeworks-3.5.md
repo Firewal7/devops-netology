@@ -61,7 +61,7 @@ web-consumer-5f87765478-t8fll   1/1     Running   0          3m22s   10.1.225.5 
 
 Заходим в первый под web-consumer-5f87765478-ppqh6 с адресом 10.1.225.3, и пробуем оттуда сначала пинговать auth-db по адресу 10.1.225.4. Как видим приложение доступно:
 
-root@vm1:~# kubectl exec -it pod/web-consumer-5f87765478-ppqh6 -n web -c busybox -- bin/sh
+root@vm1:~# kubectl exec -it pod/web-consumer-5f87765478-ppqh6 -n web -- bin/sh
 bin/sh: shopt: not found
 
 [ root@web-consumer-5f87765478-ppqh6:/ ]$ ping 10.1.225.4
@@ -102,7 +102,7 @@ Commercial support is available at
 
 Заходим во второй pod:
 
-root@vm1:~# kubectl exec -it pod/web-consumer-5f87765478-t8fll -n web -c busybox -- bin/sh
+root@vm1:~# kubectl exec -it pod/web-consumer-5f87765478-t8fll -n web -- bin/sh
 bin/sh: shopt: not found
 
 [ root@web-consumer-5f87765478-t8fll:/ ]$ ping 10.1.225.4
