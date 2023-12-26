@@ -19,16 +19,16 @@ kubectl apply -f https://raw.githubusercontent.com/netology-code/kuber-homeworks
 4. Продемонстрировать, что проблема решена.
 
 ```
-### Запустил:
+Запустил:
 
 root@vm2:~# kubectl apply -f https://raw.githubusercontent.com/netology-code/kuber-homeworks/main/3.5/files/task.yaml
 Error from server (NotFound): error when creating "https://raw.githubusercontent.com/netology-code/kuber-homeworks/main/3.5/files/task.yaml": namespaces "web" not found
 Error from server (NotFound): error when creating "https://raw.githubusercontent.com/netology-code/kuber-homeworks/main/3.5/files/task.yaml": namespaces "data" not found
 Error from server (NotFound): error when creating "https://raw.githubusercontent.com/netology-code/kuber-homeworks/main/3.5/files/task.yaml": namespaces "data" not found
 
-### Нет namespaces.
+Нет namespaces.
 
-### Создаём его:
+Создаём его:
 
 root@vm2:~# microk8s kubectl create namespace web
 namespace/web created
@@ -63,7 +63,7 @@ deployment.apps/auth-db   1/1     1            1           23m
 NAME                                 DESIRED   CURRENT   READY   AGE
 replicaset.apps/auth-db-7b5cdbdc77   1         1         1       23m
 
-### Смотрим логи:
+Смотрим логи:
 
 root@vm2:~# kubectl logs pod/web-consumer-5f87765478-gpbzd -n web
 curl: (6) Couldn't resolve host 'auth-db'
@@ -81,11 +81,11 @@ curl: (6) Couldn't resolve host 'auth-db'
 curl: (6) Couldn't resolve host 'auth-db'
 curl: (6) Couldn't resolve host 'auth-db'
 
-### Хост не знает dns имени auth-db.
+Хост не знает dns имени auth-db.
 
-### Надо записать в dns запись auth-db.
+Надо записать в dns запись auth-db.
 
-### Пропишу в каждом контейнере в файле hosts.
+Пропишу в каждом контейнере в файле hosts.
 
 root@vm2:~# kubectl exec -it pod/web-consumer-5f87765478-gpbzd -n web -c busybox -- bin/sh
 bin/sh: shopt: not found
@@ -103,7 +103,7 @@ fe00::2 ip6-allrouters
 10.1.185.196    web-consumer-5f87765478-gpbzd
 10.152.183.38 auth-db
 
-### Проверим:
+Проверим:
 
 [ root@web-consumer-5f87765478-gpbzd:/ ]$ curl auth-db
 <!DOCTYPE html>
@@ -132,7 +132,7 @@ Commercial support is available at
 </body>
 </html>
 
-### Делаем тоже самое со 2м pod:
+Делаем тоже самое со 2м pod:
 
 root@vm2:~# kubectl exec -it pod/web-consumer-5f87765478-gpbzd -n web -c busybox -- bin/sh
 bin/sh: shopt: not found
