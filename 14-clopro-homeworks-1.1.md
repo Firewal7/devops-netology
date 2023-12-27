@@ -19,9 +19,15 @@
  - Создать в этой подсети NAT-инстанс, присвоив ему адрес 192.168.10.254. В качестве image_id использовать fd80mrhj8fl2oe87o4e1.
  - Создать в этой публичной подсети виртуалку с публичным IP, подключиться к ней и убедиться, что есть доступ к интернету.
 
+[Конфиги Terraform](https://github.com/Firewal7/devops-netology/tree/main/14-clopro-homeworks-1.1)
+
 ```
+### Подключаемся к public:
+
 root@vm-mint:/home/msi/devops-netology# ssh -i /root/.ssh/id.rsa ubuntu@158.160.116.100
 Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-156-generic x86_64)
+
+### Проверяем доступ в интернет:
 
 ubuntu@public:~/$ ping google.com
 PING google.com (173.194.220.100) 56(84) bytes of data.
@@ -38,8 +44,12 @@ PING google.com (173.194.220.100) 56(84) bytes of data.
  - Создать в этой приватной подсети виртуалку с внутренним IP, подключиться к ней через виртуалку, созданную ранее, и убедиться, что есть доступ к интернету.
 
 ```
+### Подключаемся к private находясь в public:
+
 ubuntu@public:~/$ ssh -i /home/ubuntu/.ssh/id.rsa ubuntu@192.168.20.17
 Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-156-generic x86_64)
+
+### Проверяем доступ в интернет:
 
 ubuntu@private:~$ ping google.com
 PING google.com (216.58.209.206) 56(84) bytes of data.
@@ -47,9 +57,6 @@ PING google.com (216.58.209.206) 56(84) bytes of data.
 64 bytes from hem09s03-in-f14.1e100.net (216.58.209.206): icmp_seq=2 ttl=54 time=24.4 ms
 64 bytes from hem09s03-in-f14.1e100.net (216.58.209.206): icmp_seq=3 ttl=54 time=24.4 ms
 ```
-
-[Конфиги Terraform](https://github.com/Firewal7/devops-netology/tree/main/14-clopro-homeworks-1.1)
-
 
 Resource Terraform для Yandex Cloud:
 
