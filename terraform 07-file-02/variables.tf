@@ -1,22 +1,22 @@
  variable "token" {
   type        = string
-  description = ""
+  description = "AQAAAAAvafbJAATuwdLAPg798Un2j3iJLzGhuuY"
 }
 
 variable "cloud_id" {
   type        = string
-  description = ""
+  description = "b1g19chq3o5d0u2d4se6"
 }
 
 variable "folder_id" {
   type        = string
-  description = ""
+  description = "b1giheq958o43g020idm"
 }
 
 variable "default_zone" {
   type        = string
   default     = "ru-central1-a"
-  description = ""
+  description = "ru-central1-a"
 }
 variable "default_cidr" {
   type        = list(string)
@@ -41,7 +41,7 @@ variable "vms_ssh_root_key" {
   type = map(any)
   default = {
    serial-port-enable   = 1
-   ssh-keys             = "ssh-rsa 
+   ssh-keys             = "ssh-rsa " 
   }
 }
 ###yandex_compute_image vars
