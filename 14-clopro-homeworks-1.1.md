@@ -30,7 +30,7 @@ PING google.com (173.194.220.100) 56(84) bytes of data.
 64 bytes from lk-in-f100.1e100.net (173.194.220.100): icmp_seq=3 ttl=58 time=20.9 ms
 
 ```
-![Ссылка 1]()
+![Ссылка 1](https://github.com/Firewal7/devops-netology/blob/main/image/14-clopro-homeworks-1.1.jpg)
 
 3. Приватная подсеть.
  - Создать в VPC subnet с названием private, сетью 192.168.20.0/24.

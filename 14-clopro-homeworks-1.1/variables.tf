@@ -55,7 +55,6 @@ variable "public_resources" {
  }
 }
 
-
 ### Vm nat
 
 ###yandex_compute_image vars
@@ -81,7 +80,6 @@ variable "nat_resources" {
     core_fraction  = 20
  }
 }
-
 
 ### Private
 
