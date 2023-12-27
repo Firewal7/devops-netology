@@ -48,6 +48,7 @@ PING google.com (216.58.209.206) 56(84) bytes of data.
 64 bytes from hem09s03-in-f14.1e100.net (216.58.209.206): icmp_seq=3 ttl=54 time=24.4 ms
 ```
 
+[Конфиги Terraform](https://github.com/Firewal7/devops-netology/tree/main/14-clopro-homeworks-1.1)
 
 
 Resource Terraform для Yandex Cloud:
