@@ -141,7 +141,7 @@ Commercial support is available at
 </body>
 </html>
 ```
-
+```
 Заходим в логи: 
 
 root@vm1:~# kubectl logs pod/web-consumer-5f87765478-ktc4w -n web
@@ -153,14 +153,14 @@ root@vm1:~# kubectl logs pod/web-consumer-5f87765478-z56cl -n web
 curl: (6) Couldn't resolve host 'auth-db'
 curl: (6) Couldn't resolve host 'auth-db'
 curl: (6) Couldn't resolve host 'auth-db'
-
+```
 Проблема в dns. Нужно прописать в dns запись auth-db.
 pod-ы в разных namespace, поэтому pod-ы из web не могут достучаться до pod-a из data.
 
 Преходим в Конфиг: 
-
+```
 root@vm1:~# EDITOR=nano kubectl edit -n web deployments.apps web-consumer
-
+```
 Меняем строчку на:
 ```
     spec:
@@ -170,7 +170,7 @@ root@vm1:~# EDITOR=nano kubectl edit -n web deployments.apps web-consumer
         - -c
         - while true; do curl auth-db.data; sleep 5; done
 ```
-
+```
 root@vm1:~# kubectl get pods -A
 NAMESPACE     NAME                                     READY   STATUS        RESTARTS   AGE
 kube-system   calico-node-d8pst                        1/1     Running       0          28m
@@ -181,7 +181,7 @@ web           web-consumer-76669b5d6d-7xbsb            1/1     Running       0  
 web           web-consumer-5f87765478-z56cl            1/1     Terminating   0          25m
 web           web-consumer-76669b5d6d-94r4x            1/1     Running       0          13s
 web           web-consumer-5f87765478-ktc4w            1/1     Terminating   0          25m
-
+```
 ```
 root@vm1:~# kubectl logs pod/web-consumer-76669b5d6d-7xbsb -n web
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
