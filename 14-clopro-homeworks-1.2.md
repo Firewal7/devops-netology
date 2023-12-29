@@ -39,7 +39,7 @@
 
 ---
 
-- [Конфиги Terraform]()
+- [Конфиги Terraform](https://github.com/Firewal7/devops-netology/tree/main/14-clopro-homeworks-1.2)
 
 root@vm-mint:/home/msi/devops-netology/14-clopro-homeworks-1.2# terraform apply
 
@@ -70,16 +70,16 @@ pic-url = "https://sofin-netology-bucket-2023.storage.yandexcloud.net/image.png"
 
 ### Переходим по адресу: http://158.160.137.209
 
-![Ссылка 1]()
+![Ссылка 1](https://github.com/Firewal7/devops-netology/blob/main/image/14-clopro-homeworks-1.2-1.jpg)
 
 ### Список Виртуальных машин: 
 
-![Ссылка 2]()
+![Ссылка 2](https://github.com/Firewal7/devops-netology/blob/main/image/14-clopro-homeworks-1.2-2.jpg)
 
 ### Удалил одну VM:
 
-![Ссылка 3]()
+![Ссылка 3](https://github.com/Firewal7/devops-netology/blob/main/image/14-clopro-homeworks-1.2-3.jpg)
 
 ### Проверяем доступность: http://158.160.137.209
 
-![Ссылка 4]()
+![Ссылка 4](https://github.com/Firewal7/devops-netology/blob/main/image/14-clopro-homeworks-1.2-4.jpg)
