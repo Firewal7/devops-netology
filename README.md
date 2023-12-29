@@ -53,5 +53,5 @@
 49. [Troubleshooting](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.5.md)
 50. [Организация сети](https://github.com/Firewal7/devops-netology/blob/main/14-clopro-homeworks-1.1.md)
 51. [Вычислительные мощности. Балансировщики нагрузки](https://github.com/Firewal7/devops-netology/blob/main/14-clopro-homeworks-1.2.md)
-52. []()
-53. []()
+52. [Безопасность в облачных провайдерах]()
+53. [Кластеры. Ресурсы под управлением облачных провайдеров]()
