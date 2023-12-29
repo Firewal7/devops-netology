@@ -46,4 +46,12 @@
 42. [Конфигурация приложений](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.3.md)
 43. [Управление доступом](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.4.md)
 44. [Helm](https://github.com/Firewal7/devops-netology/blob/main/12-kuber-homeworks-2.5.md)
-    
+45. [Компоненты Kubernetes](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.1.md)
+46. [Установка Kubernetes](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.2.md)
+47. [Как работает сеть в K8s](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.3.md)
+48. [Обновление приложений](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.4.md)
+49. [Troubleshooting](https://github.com/Firewal7/devops-netology/blob/main/13-kuber-homeworks-3.5.md)
+50. [Организация сети](https://github.com/Firewal7/devops-netology/blob/main/14-clopro-homeworks-1.1.md)
+51. [Вычислительные мощности. Балансировщики нагрузки](https://github.com/Firewal7/devops-netology/blob/main/14-clopro-homeworks-1.2.md)
+52. []()
+53. []()
